@@ -6,19 +6,22 @@ OBJS_DIR_SERVER		=	objects_server
 
 OBJS_SERVER			=	$(patsubst %.c,objects_server/%.o, $(SRC_SERVER))
 
-NAME_SERVER			=	server
+NAME_SERVER			=	server_exec
 
 #---------------------------------------------------
 
 #------------------- client ------------------------
 
 SRC_CLIENT			=	client_test.c \
+						args_check.c \
+						die.c \
+
 
 OBJS_DIR_CLIENT		=	objects_client
 
 OBJS_CLIENT			=	$(patsubst %.c,objects_client/%.o, $(SRC_CLIENT))
 
-NAME_CLIENT			=	client
+NAME_CLIENT			=	client_exec
 
 #---------------------------------------------------
 
@@ -30,6 +33,7 @@ NAME		=	minitalk
 
 VPATH				=	./src/client/test \
 						./src/server/test \
+						./src/client/verification_and_errors \
 
 $(OBJS_DIR_SERVER)/%.o:	%.c
 							$(CC) $(CFLAGS) -c $< -o $@

@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   die.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/10 22:59:44 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/11 13:10:51 by dbrandao         ###   ########.fr       */
+/*   Created: 2022/12/11 12:59:32 by dbrandao          #+#    #+#             */
+/*   Updated: 2022/12/11 13:19:07 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./client.h"
+#include "../client.h"
 
-int	main(int argc, char **argv)
+void	die(char *error_msg)
 {
-	client_test();
-	args_check(argc, argv);
-	return (0);
+	ft_printf("\033[0;31m%s\033[0m", error_msg);
+	ft_printf(" \033[0;31mProgram closed.\033[0m\n", error_msg);
+	exit(0);
 }
