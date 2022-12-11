@@ -13,8 +13,7 @@ NAME_SERVER			=	server_exec
 
 #------------------- client ------------------------
 
-SRC_CLIENT			=	client_test.c \
-						args_check.c \
+SRC_CLIENT			=	args_check.c \
 						die.c \
 
 
