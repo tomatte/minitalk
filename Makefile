@@ -1,0 +1,69 @@
+#------------------- server ------------------------
+
+SRC_SERVER			=	server_test.c \
+
+OBJS_DIR_SERVER		=	objects_server
+
+OBJS_SERVER			=	$(patsubst %.c,objects_server/%.o, $(SRC_SERVER))
+
+NAME_SERVER			=	server
+
+#---------------------------------------------------
+
+#------------------- client ------------------------
+
+SRC_CLIENT			=	client_test.c \
+
+OBJS_DIR_CLIENT		=	objects_client
+
+OBJS_CLIENT			=	$(patsubst %.c,objects_client/%.o, $(SRC_CLIENT))
+
+NAME_CLIENT			=	client
+
+#---------------------------------------------------
+
+LIBFT		=	./libft/libftprintf.a
+
+CFLAGS		=	-I./ -Wall -Werror -Wextra
+
+NAME		=	minitalk
+
+VPATH				=	./src/client/test \
+						./src/server/test \
+
+$(OBJS_DIR_SERVER)/%.o:	%.c
+							$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJS_DIR_CLIENT)/%.o:	%.c
+							$(CC) $(CFLAGS) -c $< -o $@
+
+all: $(NAME)
+
+$(OBJS_DIR_SERVER):
+						mkdir -p $@
+
+$(OBJS_DIR_CLIENT):
+						mkdir -p $@
+
+$(NAME_SERVER): $(OBJS_DIR_SERVER) $(OBJS_SERVER) $(LIBFT)
+	cc ./src/server/server.c ${OBJS_SERVER} ${CFLAGS} ${LIBFT} -o $@
+
+$(NAME_CLIENT): $(OBJS_DIR_CLIENT) $(OBJS_CLIENT) $(LIBFT)
+	cc ./src/client/client.c ${OBJS_CLIENT} ${CFLAGS} ${LIBFT} -o $@
+	
+$(NAME): $(NAME_SERVER) $(NAME_CLIENT)
+
+$(LIBFT):
+	make -C ./libft bonus
+
+clean:
+	rm -rf ${OBJS_DIR_SERVER} ${OBJS_DIR_CLIENT}
+	make -C ./libft clean
+
+fclean:	clean
+	rm -f ${NAME_SERVER} ${NAME_CLIENT}
+	make -C ./libft fclean
+
+re: fclean all
+
+.PHONY:	all clean fclean re
