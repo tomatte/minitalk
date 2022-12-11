@@ -1,6 +1,7 @@
 #------------------- server ------------------------
 
-SRC_SERVER			=	server_test.c \
+SRC_SERVER			=	listen_to_signal.c \
+
 
 OBJS_DIR_SERVER		=	objects_server
 
@@ -34,6 +35,7 @@ NAME		=	minitalk
 VPATH				=	./src/client/test \
 						./src/server/test \
 						./src/client/verification_and_errors \
+						./src/server/signal \
 
 $(OBJS_DIR_SERVER)/%.o:	%.c
 							$(CC) $(CFLAGS) -c $< -o $@
