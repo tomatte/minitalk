@@ -1,0 +1,6 @@
+*.o
+objects*
+*.a
+client
+server
+
