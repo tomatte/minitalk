@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:27:51 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/07 02:32:59 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/12 15:19:04 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,5 +123,8 @@ int		ft_isspace(char c);
 
 //return 1 if char is - or +
 int		ft_issign(char c);
+
+//add a char to the end of the string
+void	ft_str_push_char(char **str, char c);
 
 #endif
