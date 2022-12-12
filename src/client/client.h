@@ -11,4 +11,7 @@ void	args_check(int argc, char **argv);
 void	send_sigusr1(char **argv);
 void	send_sigusr2(char **argv);
 
+//utils
+char	*char_to_binary(char c);
+
 #endif
