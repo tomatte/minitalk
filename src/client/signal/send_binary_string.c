@@ -1,30 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   send_signal.c                                      :+:      :+:    :+:   */
+/*   send_binary_string.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 13:13:40 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/12 13:20:56 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/12 17:44:21 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../client.h"
 
-void	send_sigusr1(char **argv)
+static void	send_binary_char(int pid, char c)
 {
-	int	pid;
+	char	*binary_char;
+	int		i;
 
-	pid = ft_atoi(argv[1]);
-	kill(pid, SIGUSR1);
+	binary_char = char_to_binary(c);
+	if (!binary_char)
+		return ;
+	i = -1;
+	while (binary_char[++i])
+	{
+		if (binary_char[i] == '0')
+			kill(pid, SIGUSR1);
+		else if (binary_char[i] == '1')
+			kill(pid, SIGUSR2);
+	}
+	free(binary_char);
 }
 
-void	send_sigusr2(char **argv)
+void	send_binary_string(char **argv)
 {
-	int	pid;
+	int		i;
+	int		pid;
+	char	*str;
 
 	pid = ft_atoi(argv[1]);
-	kill(pid, SIGUSR2);
+	str = argv[2];
+	i = -1;
+	while (str[++i])
+		send_binary_char(pid, str[i]);
 }
-
