@@ -15,6 +15,7 @@ NAME_SERVER			=	server_exec
 
 SRC_CLIENT			=	args_check.c \
 						die.c \
+						send_signal.c
 
 
 OBJS_DIR_CLIENT		=	objects_client
@@ -35,6 +36,7 @@ VPATH				=	./src/client/test \
 						./src/server/test \
 						./src/client/verification_and_errors \
 						./src/server/signal \
+						./src/client/signal \
 
 $(OBJS_DIR_SERVER)/%.o:	%.c
 							$(CC) $(CFLAGS) -c $< -o $@

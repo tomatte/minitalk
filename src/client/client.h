@@ -7,4 +7,8 @@
 void	die(char *error_msg);
 void	args_check(int argc, char **argv);
 
+//signals
+void	send_sigusr1(char **argv);
+void	send_sigusr2(char **argv);
+
 #endif
