@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:27:51 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/12 15:19:04 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/14 10:32:12 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,5 +126,8 @@ int		ft_issign(char c);
 
 //add a char to the end of the string
 void	ft_str_push_char(char **str, char c);
+
+//potentiation
+int	ft_pow(int num, int power)
 
 #endif

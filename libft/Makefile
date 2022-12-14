@@ -26,6 +26,7 @@ MORE_SRC	=	ft_putchar.c ft_putstr.c \
 				ft_isnumber.c ft_isspace.c \
 				ft_issign.c \
 				ft_str_push_char.c \
+				ft_pow.c \
 
 GNL_SRC		=	./get_next_line/get_next_line_bonus.c \
 				./get_next_line/get_next_line_utils_bonus.c \
