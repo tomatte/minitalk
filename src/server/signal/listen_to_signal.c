@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 13:52:32 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/12 17:46:10 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/14 11:29:55 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,18 @@
 
 void	signal_handling(int signum)
 {
-	if (signum == SIGUSR1)
-		ft_printf("0\n");
-	else if (signum == SIGUSR2)
-		ft_printf("1\n");
+	static char	c = 0;
+	static char	i = 0;
+
+	i++;
+	if (signum == SIGUSR2)
+		c += ft_pow(2, 8 - i);
+	if (i == 8)
+	{
+		ft_printf("%c", c);
+		c = 0;
+		i = 0;
+	}
 }
 
 void	listen_to_signal()
