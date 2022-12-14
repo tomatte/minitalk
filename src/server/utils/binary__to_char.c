@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   listen_to_signal.c                                 :+:      :+:    :+:   */
+/*   binary__to_char.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/11 13:52:32 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/12 17:46:10 by dbrandao         ###   ########.fr       */
+/*   Created: 2022/12/14 10:34:59 by dbrandao          #+#    #+#             */
+/*   Updated: 2022/12/14 11:02:43 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../server.h"
 
-void	signal_handling(int signum)
+char	binary_to_char(char *binary)
 {
-	if (signum == SIGUSR1)
-		ft_printf("0\n");
-	else if (signum == SIGUSR2)
-		ft_printf("1\n");
-}
+	char	result;
+	char	power;
+	char	i;
 
-void	listen_to_signal()
-{
-	signal(SIGUSR1, signal_handling);
-	signal(SIGUSR2, signal_handling);
-	while (1)
-		;
+	if (!binary || !*binary)
+		return (0);
+	power = ft_strlen(binary) - 1;
+	result = 0;
+	i = 0;
+	while (binary[i])
+	{
+		if (binary[i] == '1')
+			result += ft_pow(2, power - i);
+		i++;
+	}
+	return (result);
 }
