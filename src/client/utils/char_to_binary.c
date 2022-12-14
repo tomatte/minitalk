@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:25:29 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/12 16:09:11 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/14 09:24:08 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,23 @@ char	*char_to_binary(char c)
 		c = c / 2;
 	}
 	return (binary);
+}
+
+char	*binary_8bits_char(char c)
+{
+	char	*binary_char;
+	char	*binary_8bits_char;
+	int				left_zeros;
+
+	if (!c)
+		return (ft_strdup("00000000"));
+	binary_char = char_to_binary(c);
+	binary_8bits_char = (char *) malloc(sizeof(char) * 9);
+	if (!binary_char || !binary_8bits_char)
+		return (NULL);
+	ft_strlcpy(binary_8bits_char, "00000000", 9);
+	left_zeros = 8 - ft_strlen(binary_char);
+	ft_strlcpy(&binary_8bits_char[left_zeros], binary_char, 9 - left_zeros);
+	free(binary_char);
+	return (binary_8bits_char);
 }

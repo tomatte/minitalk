@@ -12,5 +12,6 @@ void	send_binary_string(char **argv);
 
 //utils
 char	*char_to_binary(char c);
+char	*binary_8bits_char(char c);
 
 #endif

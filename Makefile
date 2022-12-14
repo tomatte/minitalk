@@ -15,8 +15,9 @@ NAME_SERVER			=	server_exec
 
 SRC_CLIENT			=	args_check.c \
 						die.c \
-						send_signal.c \
-						char_to_binary.c
+						char_to_binary.c \
+						send_binary_string.c \
+
 
 
 OBJS_DIR_CLIENT		=	objects_client
