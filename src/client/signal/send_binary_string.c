@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 13:13:40 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/14 09:27:01 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/14 16:55:14 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	send_binary_char(int pid, char c)
 			kill(pid, SIGUSR1);
 		else if (binary_char[i] == '1')
 			kill(pid, SIGUSR2);
-		usleep(2);
+		usleep(105);
 	}
 	free(binary_char);
 }
