@@ -33,7 +33,7 @@ NAME_CLIENT			=	client
 
 LIBFT		=	./libft/libftprintf.a
 
-CFLAGS		=	-I./
+CFLAGS		=	-I./ -Wall -Werror -Wextra
 
 NAME		=	minitalk
 
