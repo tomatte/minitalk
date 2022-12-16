@@ -6,7 +6,7 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 13:52:32 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/16 22:34:43 by coder            ###   ########.fr       */
+/*   Updated: 2022/12/16 22:51:04 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	signal_handling(int signum, siginfo_t *info, void *ucontext)
 void	listen_to_signal(void)
 {
 	struct sigaction	sa;
-	sigset_t            mask;
+	sigset_t			mask;
 
 	sigemptyset(&mask);
 	sa.sa_sigaction = signal_handling;
