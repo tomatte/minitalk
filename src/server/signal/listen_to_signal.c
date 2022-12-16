@@ -6,7 +6,7 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 13:52:32 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/16 15:23:01 by coder            ###   ########.fr       */
+/*   Updated: 2022/12/16 16:30:37 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	signal_handling(int signum, siginfo_t *info, void *ucontext)
 	static char	c = 0;
 	static char	i = 0;
 
-	usleep(50);
+	usleep(100);
 	i++;
 	if (signum == SIGUSR2)
 		c += ft_pow(2, 8 - i);
