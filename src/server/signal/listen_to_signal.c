@@ -6,7 +6,7 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 13:52:32 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/16 16:30:37 by coder            ###   ########.fr       */
+/*   Updated: 2022/12/16 22:34:43 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ void	signal_handling(int signum, siginfo_t *info, void *ucontext)
 	static char	c = 0;
 	static char	i = 0;
 
-	usleep(100);
+	(void) ucontext;
 	i++;
 	if (signum == SIGUSR2)
 		c += ft_pow(2, 8 - i);
 	if (i == 8)
 	{
-		ft_printf("%c", c);
+		write(1, &c, 1);
 		c = 0;
 		i = 0;
 	}
@@ -33,11 +33,14 @@ void	signal_handling(int signum, siginfo_t *info, void *ucontext)
 void	listen_to_signal(void)
 {
 	struct sigaction	sa;
+	sigset_t            mask;
 
+	sigemptyset(&mask);
 	sa.sa_sigaction = signal_handling;
 	sa.sa_flags = SA_SIGINFO;
+	sa.sa_mask = mask;
 	sigaction(SIGUSR1, &sa, NULL);
 	sigaction(SIGUSR2, &sa, NULL);
 	while (1)
-		usleep(50);
+		;
 }
