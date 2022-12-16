@@ -1,15 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   client.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/16 14:55:07 by coder             #+#    #+#             */
+/*   Updated: 2022/12/16 15:16:57 by coder            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CLIENT_H
 # define CLIENT_H
 # include "../../libft/libftprintf.h"
 # include <signal.h>
 
-typedef struct  s_data
+typedef struct s_data
 {
-    int     i;
-    int     pid;
-    int     first;
-    char    *binary;
-}   t_data;
+	int		i;
+	int		pid;
+	int		first;
+	char	*binary;
+}	t_data;
 
 //verification and errors
 void	die(char *error_msg);

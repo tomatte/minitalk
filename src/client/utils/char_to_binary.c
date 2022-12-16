@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   char_to_binary.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:25:29 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/14 09:24:08 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/16 15:20:00 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char	*binary_8bits_char(char c)
 {
 	char	*binary_char;
 	char	*binary_8bits_char;
-	int				left_zeros;
+	int		left_zeros;
 
 	if (!c)
 		return (ft_strdup("00000000"));

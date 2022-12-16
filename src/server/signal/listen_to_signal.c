@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   listen_to_signal.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 13:52:32 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/15 16:37:13 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/16 15:23:01 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ void	signal_handling(int signum, siginfo_t *info, void *ucontext)
 	kill(info->si_pid, SIGUSR1);
 }
 
-void	listen_to_signal()
+void	listen_to_signal(void)
 {
-	struct sigaction sa;
+	struct sigaction	sa;
 
 	sa.sa_sigaction = signal_handling;
 	sa.sa_flags = SA_SIGINFO;
 	sigaction(SIGUSR1, &sa, NULL);
 	sigaction(SIGUSR2, &sa, NULL);
 	while (1)
-		usleep(50) ;
+		usleep(50);
 }

@@ -3,26 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 22:05:48 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/11 14:05:55 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/16 15:22:01 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./server.h"
 
-static void	print_pid()
+static void	print_pid(void)
 {
-    int	pid;
+	int	pid;
 
 	pid = getpid();
-    ft_printf("Server pid: %d\n", pid);
+	ft_printf("Server pid: %d\n", pid);
 }
 
 int	main(void)
 {
-    print_pid();
-    listen_to_signal();
-    return (0);
+	print_pid();
+	listen_to_signal();
+	return (0);
 }

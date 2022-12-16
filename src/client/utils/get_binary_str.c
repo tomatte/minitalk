@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   big_binary.c                                       :+:      :+:    :+:   */
+/*   get_binary_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 11:02:40 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/15 12:15:49 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/16 15:20:32 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ char	*get_binary_str(char *str)
 	char	*binary_char;
 	char	*aux;
 
-	
 	big = ft_strdup("\0");
 	while (*str)
 	{
