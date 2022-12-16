@@ -6,7 +6,7 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 14:48:20 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/16 15:19:15 by coder            ###   ########.fr       */
+/*   Updated: 2022/12/16 22:33:03 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,11 @@ static void	signal_handling(int signum)
 {
 	if (signum != SIGUSR1)
 		return ;
-	usleep(50);
 	if (!g_data.binary[g_data.i])
+	{
+		free(g_data.binary);
 		exit(0);
+	}
 	if (g_data.binary[g_data.i] == '0')
 		kill(g_data.pid, SIGUSR1);
 	else
