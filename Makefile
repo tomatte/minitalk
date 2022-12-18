@@ -16,7 +16,6 @@ NAME_SERVER			=	server
 SRC_CLIENT			=	args_check.c \
 						die.c \
 						char_to_binary.c \
-						send_binary_string.c \
 						response_based_message.c \
 						get_binary_str.c \
 						

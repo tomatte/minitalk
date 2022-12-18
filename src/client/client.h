@@ -6,7 +6,7 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 14:55:07 by coder             #+#    #+#             */
-/*   Updated: 2022/12/16 15:16:57 by coder            ###   ########.fr       */
+/*   Updated: 2022/12/17 18:14:36 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	die(char *error_msg);
 void	args_check(int argc, char **argv);
 
 //signals
-void	send_binary_string(char **argv);
 void	response_based_message(char **argv);
 
 //utils
